@@ -1,17 +1,28 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+    <ion-title slot="start">{{user}}</ion-title>
+    <ion-title slot="end">{{coin}} coin</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+<ion-content>
+  <div style="padding: 8px;background-color: #006064;width: 100%;align-items: center;">
+    <span style="margin:  5px;color: #fff;">โครงการที่เข้าร่วมทั้งหมด </span>
+  </div>
+  <ion-segment color="tertiary" [(ngModel)]="selectedTab">
+    <ion-segment-button value="Detail"><ion-label>โครงการที่เปิดอยู่ (4)</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Review"><ion-label>ประวัติการเข้าร่วม</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <div *ngIf="selectedTab == 'Detail'">
+     
+  </div>
+  <div *ngIf="selectedTab == 'Review'" style="padding: 5%;">
+    <ion-select aria-label="ปีเกิด" interface="popover" fill="outline" placeholder="เลือกเพศ" [(ngModel)]="status">
+      <ion-select-option value="all">ทุกสถานะ</ion-select-option>
+      <ion-select-option value="complete">สำเร็จ</ion-select-option>
+      <ion-select-option value="rate">ทำไม่ทันเวลาที่กำหนด</ion-select-option>
+    </ion-select>
+  </div>
 </ion-content>

@@ -1,0 +1,65 @@
+<ion-content>
+  <div style="padding: 5%;height: 100%;">
+    <ion-label color="#FFFFFF" style="font-size: 18px;color: #1B264F;">นโยบายความเป็นส่วนตัว</ion-label>
+
+    <div>
+      <ion-list>
+        <ion-grid style="width: 100%;border-bottom: 1px #B6B6B6 solid ;padding-bottom: 0%;">
+          <ion-row>
+            <ion-col size="1">
+              <ion-checkbox labelPlacement="end" [(ngModel)]="is_enabled_auth_market"
+                (ionChange)="checkbox(is_enabled_auth_market)"></ion-checkbox>
+            </ion-col>
+            <ion-col size="11">
+              <span>ข้าพเจ้ายินยอมให้ Meow Survey ใช้ข้อมูลได้
+                ตามวัตถุประสงค์ในทุกข้อ</span>
+              <p style="color: #B6B6B6;font-size: 14px;">ทางบริษัทให้ความสำคัญในการรักษาข้อมูลส่วนบุคคล
+                ของคุณเป็นอันดับแรก และจะไม่นำข้อมูลของคุณไปใช้
+                นอกเหนือจากวัตถุประสงค์ที่คุณให้ความยินยอมไว้</p>
+              <!-- <ion-button color="primary"><ion-icon name="chevron-forward-outline"></ion-icon></ion-button> -->
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-grid style="width: 100%;border-bottom: 1px #B6B6B6 solid ;">
+          <ion-row>
+            <ion-col size="1">
+              <ion-checkbox labelPlacement="end" [(ngModel)]="is_enabled_auth"
+                (ionChange)="checkbox_auth(is_enabled_auth)"></ion-checkbox>
+            </ion-col>
+            <ion-col size="10">
+              <span style="color: #ff0000;">[จำเป็น]</span><span> อนุญาตให้ Meow Survey นำข้อมูลไปใช้เพื่อการจัดส่งสินค้า</span>
+              <!-- <ion-button color="primary"><ion-icon name="chevron-forward-outline"></ion-icon></ion-button> -->
+            </ion-col>
+            <ion-col size="1" style="align-items: center;">
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-grid style="width: 100%;border-bottom: 1px #B6B6B6 solid ;">
+          <ion-row>
+            <ion-col size="1">
+              <ion-checkbox labelPlacement="end" [(ngModel)]="is_enabled_market"
+                (ionChange)="checkbox_market(is_enabled_market)"></ion-checkbox>
+            </ion-col>
+            <ion-col size="11">
+              <span>อนุญาตให้ Meow Survey
+                นำข้อมูลไปใช้เพื่อกิจกรรมทางด้านการตลาด</span><!-- <ion-button color="primary"><ion-icon name="chevron-forward-outline"></ion-icon></ion-button> -->
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-list>
+      <!-- <ion-checkbox labelPlacement="end">
+        <p>ฉันได้อ่านและทำความเข้าใจเงื่อนไขและข้อกำหนด<br>การให้บริการแล้ว</p>
+      </ion-checkbox> -->
+    </div>
+    <div>
+      <p style="font-size: 14px;">ข้อความใดๆที่ปรากฎในหน้านี้ เป็นแค่ ตัวอย่าง
+        ที่ถูกสร้างขึ้นมาเพื่อให้เห็นภาพ กรุณาปรึกษาฝ่าย
+        กฎหมายของคุณ และนำข้อความมาแทนที่ในตัวอย่าง</p>
+    </div>
+
+  </div>
+  <button slot="fixed" class="button-allow-enabled" [ngClass]="{'button-allow-disabled ': !is_enabled_auth}" [disabled]="!is_enabled_auth" routerLink="/register">ยินยอม</button>
+  <!-- <ion-button slot="fixed" class="button-assent" [disabled]="!is_enabled_auth" routerLink="/register">ยินยอม</ion-button> -->
+
+</ion-content>

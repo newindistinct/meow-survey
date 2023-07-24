@@ -1,0 +1,42 @@
+<ion-content>
+  <div style="padding: 5%;height: 100%;">
+    <ion-label color="#FFFFFF" style="font-size: 18px;color: #1B264F;">เพิ่มที่อยู่</ion-label>
+    <div slot="label" style="margin-top: 15px;">
+      <span style="color: #1B264F;">บ้านเลขที่ </span>
+      <span style="color: #ff0000;">*</span>
+      <ion-input fill="outline" placeholder="ระบุบ้านเลขที่"> </ion-input>
+    </div>
+    <div slot="label" style="margin-top: 10px;">
+      <span style="color: #1B264F;">ที่อยู่ 1 </span>
+      <ion-input fill="outline" placeholder="ระบุซอย / ถนน / หมู่บ้าน"> </ion-input>
+    </div>
+    <div slot="label" style="margin-top: 10px;">
+      <span style="color: #1B264F;">ที่อยู่ 2 </span>
+      <ion-input fill="outline" placeholder="ระบุอาคาร / ชั้น / ห้อง"> </ion-input>
+    </div>
+    <div slot="label" style="margin-top: 10px;">
+      <span style="color: #1B264F;">แขวง / ตำบล </span>
+      <span style="color: #ff0000;">*</span>
+      <ion-input fill="outline" placeholder="ระบุแขวง / ตำบล"> </ion-input>
+    </div>
+    <div slot="label" style="margin-top: 10px;">
+      <span style="color: #1B264F;">เขต / อำเภอ </span>
+      <span style="color: #ff0000;">*</span>
+      <ion-input fill="outline" placeholder="ระบุเขต / อำเภอ"> </ion-input>
+    </div>
+    <div slot="label" style="margin-top: 10px;">
+      <span style="color: #1B264F;">จังหวัด </span>
+      <span style="color: #ff0000;">*</span>
+      <ion-input fill="outline" placeholder="ระบุจังหวัด"> </ion-input>
+    </div>
+    <div slot="label" style="margin-top: 10px;">
+      <span style="color: #1B264F;">รหัสไปรษณีย์ </span>
+      <span style="color: #ff0000;">*</span>
+      <ion-input fill="outline" placeholder="ระบุรหัสไปรษณีย์"> </ion-input>
+    </div>
+    <ion-button expand="block" (click)="openModal()" style="margin-top: 10px;">ค้นหาที่อยู่</ion-button>
+    <div style="height: 10%;"></div>
+  </div>
+  <button slot="fixed" class="button-cancel">ยกเลิก</button>
+  <button slot="fixed" class="button-save">บันทึก</button>
+</ion-content>

@@ -1,0 +1,20 @@
+<div class="category-slides" *ngIf="slides_category.length > 0" >
+  <swiper-container 
+    #swiper
+    (slidechange)="onSlideChange($event)"
+    [modules]="swiperModules"
+    [slidesPerView]="5"
+    [initialSlide]="3"
+    [centeredSlides]="true"
+    [autoplay]="false"
+    [spaceBetween]="20"
+    [pagination]="{clickable: true, dynamicBullets: true}">
+    <!-- effect="flip" -->
+    <swiper-slide *ngFor="let slide of slides_category" class="swiper-slide-banner">
+      <div class="category">
+        <img class="category-image" src="../../assets/image/card-media.png">
+        <span class="category-text">{{slide.category}}</span>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+</div>

@@ -1,0 +1,22 @@
+<ion-content>
+
+  <div style="padding: 5%;height: 100%;">
+    <div slot="label"><span style="color: #1B264F ;font-size: 14px;">ค้นหาที่อยู่</span>
+      <ion-searchbar [debounce]="1000" (ionInput)="handleInput($event)" show-clear-button="focus"
+        placeholder="ค้นหารหัสไปรษณีย์ แขวง เขต"></ion-searchbar>
+    </div>
+    <div>
+      <ion-list>
+        <ion-list-header>
+          <span style="color: #1B264F ;font-size: 18px;">เลือกจากรายการ</span>
+        </ion-list-header>
+        <ion-item *ngFor="let result of results">
+          <ion-label>{{ result }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div style="height: 10%;"></div>
+  </div>
+  <button slot="fixed" class="button-cancel">ยกเลิก</button>
+  <button slot="fixed" class="button-save">บันทึก</button>
+</ion-content>

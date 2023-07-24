@@ -1,0 +1,37 @@
+<div>
+  <ion-card *ngFor="let item of review" >
+    <ion-item style="padding: 2%;">
+      <ion-avatar slot="start">
+        <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+      <ion-label><ion-icon name="male-outline"></ion-icon>{{item.user}}
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+        <ion-icon name="star-outline"></ion-icon>
+        <br><ion-icon name="female-outline"></ion-icon>รีวิวเมื่อ: {{item.date}}
+      </ion-label>
+    </ion-item>
+    <div style="margin: 5%;padding: 3%;background-color: #F4F4F4;border-radius: 4px;">
+      <p>อร่อยมากเวอร์</p>
+      <!-- <div>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+        <ion-icon name="star-outline"></ion-icon>
+      </div> -->
+      <div style="display: inline-flex;">
+        <img [src]="item.img" style="height: 70px;margin: 5px;">
+        <img [src]="item.img" style="height: 70px;margin: 5px;">
+        <img [src]="item.img" style="height: 70px;margin: 5px;">
+        <img [src]="item.img" style="height: 70px;margin: 5px;">
+        <img [src]="item.img" style="height: 70px;margin: 5px;">
+        <img [src]="item.img" style="height: 70px ;margin: 5px;">
+      </div>
+
+    </div>
+  </ion-card>
+
+</div>

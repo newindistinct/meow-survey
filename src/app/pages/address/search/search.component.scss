@@ -1,0 +1,30 @@
+.button-save[slot='fixed'] {
+    background-color: #2A36B1;
+    bottom: 2%;
+    right: 5%;
+    width: 44%;
+    height: 40px;
+    border-radius: 4px;
+}
+
+.button-cancel[slot='fixed'] {
+    border: 1px #2A36B1 solid;
+    background-color: #FFF;
+    color: #2A36B1;
+    bottom: 2%;
+    left: 5%;
+    width: 44%;
+    height: 40px;
+    border-radius: 4px;
+}
+
+ion-searchbar {
+    --background: #fff;
+    --color: #2A36B1;
+    --placeholder-color: #B6B6B6;
+    --icon-color: #2A36B1;
+    --clear-button-color: #2A36B1;
+    --border-color: #2A36B1;
+    --border-radius: 8px;
+    --border-width: 1px;
+}

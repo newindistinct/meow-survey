@@ -1,0 +1,169 @@
+<ion-content>
+  <div style="padding: 5%;height: 100%;">
+    <ion-label style="font-size: 18px;color: #1B264F;">ข้อมูลของคุณ</ion-label>
+    <!-- <form #loginForm="ngForm" novalidate> -->
+    <div slot="label" style="margin-top: 15px;">
+      <span style="color: #1B264F;">ชื่อ-นามสกุล </span>
+      <span style="color: #ff0000;">*</span>
+      <ion-input fill="outline" placeholder="ระบุชื่อ-นามสกุล" [(ngModel)]="name"> </ion-input>
+    </div>
+    <div slot="label" style="margin-top: 15px;"><span style="color: #1B264F;">วันเกิด </span> <span
+        style="color: #ff0000;">*</span>
+      <ion-grid style="padding: 0%;">
+        <ion-row
+          style="justify-content: space-around;display: flex;flex-direction: row;align-items: center;padding: 0%;">
+          <ion-col size="4" style="padding-right: 3px;padding-left: 0px;">
+            <ion-select aria-label="วัน" interface="popover" fill="outline" placeholder="เลือกวันที่"
+              [(ngModel)]="birthday">
+              <ion-select-option [value]="item.day" *ngFor="let item of day">{{item.day}}</ion-select-option>
+            </ion-select>
+          </ion-col>
+          <ion-col size="4" style="padding-right: 3px;padding-left: 0px;">
+            <ion-select aria-label="เดือน" interface="popover" fill="outline" placeholder="เลือกเดือน"
+              [(ngModel)]="birthmonth">
+              <ion-select-option [value]="item.month" *ngFor="let item of month">{{item.month}}</ion-select-option>
+            </ion-select>
+          </ion-col>
+          <ion-col size="4" style="padding-right: 3px;padding-left: 0px;">
+            <ion-select aria-label="ปีเกิด" interface="popover" fill="outline" placeholder="เลือกปีเกิด"
+              [(ngModel)]="birthyear">
+              <ion-select-option [value]="item.years" *ngFor="let item of years">{{item.years}}</ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </div>
+    <div slot="label" style="margin-top: 15px;">
+      <span style="color: #1B264F;">เพศ </span>
+      <span style="color: #ff0000;">*</span>
+      <ion-select aria-label="ปีเกิด" interface="popover" fill="outline" placeholder="เลือกเพศ" [(ngModel)]="gender">
+        <ion-select-option value="ชาย">ชาย</ion-select-option>
+        <ion-select-option value="หญิง">หญิง</ion-select-option>
+      </ion-select>
+    </div>
+    <div slot="label" style="margin-top: 15px;">
+      <span style="color: #1B264F;">Line ID </span>
+      <span style="color: #ff0000;">*</span>
+      <ion-input fill="outline" placeholder="ระบุ Line ID" [(ngModel)]="lineID"> </ion-input>
+    </div>
+    <div slot="label" style="margin-top: 15px;">
+      <span style="color: #1B264F;">BZB ID </span>
+      <span style="color: #ff0000;">*</span>
+      <ion-input fill="outline" placeholder="ระบุ BZB ID " [(ngModel)]="BZBID"> </ion-input>
+    </div>
+
+    <div style="justify-content: space-between;display: flex;flex-direction: row;align-items: center;margin-top: 15px;">
+      <b style="color: #1B264F;">ที่อยู่ของคุณ</b>
+      <button class="button-add-address" routerLink="/address">แก้ไขที่อยู่</button>
+    </div>
+    <div style="margin-top: 15px;">
+      <ion-textarea [(ngModel)]="address" fill="outline"
+        style="height: 120px;border: 1px solid #2A36B1;background-color: #F4F4F4;color: #1B264F;"
+        readonly="true"></ion-textarea>
+    </div>
+    <!-- </form> -->
+    <div style="height: 10%;"></div>
+  </div>
+  <button slot="fixed" class="button-allow-enabled" class="button-register" id="open-modal">สมัครใช้บริการ</button>
+  <!-- <ion-button slot="fixed" class="button-register" id="open-modal">สมัครใช้บริการ</ion-button> -->
+</ion-content>
+<ion-modal #modal trigger="open-modal">
+  <ng-template>
+    <ion-content>
+      <!-- <ion-toolbar>
+            <ion-title>Modal</ion-title>
+            <ion-buttons slot="end">
+              <ion-button color="light" (click)="modal.dismiss()">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar> -->
+      <div style="padding: 5%;">
+        <div style="text-align: center;">
+          <p style="color: #1B264F;">ตรวจสอบข้อมูล</p>
+        </div>
+        <div>
+          <p style="color: #1B264F;">กรุณาตรวจสอบความถูกต้องของข้อมูลที่คุณกำลังสมัครใช้บริการ</p>
+        </div>
+        <div style="padding: 3%;border: 1px solid #2A36B1;border-radius: 8px;">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="4">
+                <span style="color: #B6B6B6;">ชื่อ-นามสกุล:</span>
+
+              </ion-col>
+              <ion-col size="8">
+                <span style="color: #1B264F;">{{name}}</span>
+
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="4">
+                <span style="color: #B6B6B6;">วันเกิด:</span>
+
+              </ion-col>
+              <ion-col size="8">
+                <span style="color: #1B264F;">{{birthday}} {{birthmonth}} {{birthyear}}</span>
+
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="4">
+                <span style="color: #B6B6B6;">เพศ:</span>
+
+              </ion-col>
+              <ion-col size="8">
+                <span style="color: #1B264F;">{{gender}}</span>
+
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="4">
+                <span style="color: #B6B6B6;">Line ID:</span>
+
+              </ion-col>
+              <ion-col size="8">
+                <span style="color: #1B264F;">{{lineID}}</span>
+
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="4">
+                <span style="color: #B6B6B6;">BZB ID:</span>
+
+              </ion-col>
+              <ion-col size="8">
+                <span style="color: #1B264F;">{{BZBID}}</span>
+
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="4">
+                <span style="color: #B6B6B6;">ที่อยู่การจัดส่ง:</span>
+
+              </ion-col>
+              <ion-col size="8">
+                <span style="color: #1B264F;">{{address}}</span>
+
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+        <div>
+          <p style="color: #1B264F;">หากข้อมูลถูกต้องแล้ว กรุณากดปุ่ม “ยืนยัน” เพื่อดำเนินการต่อ</p>
+        </div>
+        <div
+          style="justify-content: space-between;display: flex;flex-direction: row;align-items: center;margin-top: 15px;">
+          <button slot="fixed" class="button-cancel" (click)="modal.dismiss()">แก้ไขข้อมูล</button>
+          <button slot="fixed" class="button-save" (click)="presentAlert();modal.dismiss()"
+            routerLink="/tabs">ยืนยัน</button>
+          <!-- <ion-button color="primary" fill="outline" style="margin-top: 5%;"
+            (click)="modal.dismiss()">แก้ไขข้อมูล</ion-button>
+          <ion-button (click)="presentAlert();modal.dismiss()" color="primary" fill="solid" style="margin-top: 5%;"
+            routerLink="/tabs">ยืนยัน</ion-button> -->
+
+        </div>
+      </div>
+
+    </ion-content>
+  </ng-template>
+</ion-modal>
